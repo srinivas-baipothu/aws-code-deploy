@@ -1,0 +1,19 @@
+{
+  "name": "fia-services-pele",
+  "formation": {
+    "web": {
+      "size": "1X",
+      "quantity": 2
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.factset.com/fia-mgr/heroku-buildpack-python-mssql.git"
+    }
+  ],
+  "env": {
+    "PRIMARY_DATABASE_URL": "DRIVER={ODBC Driver 11 for SQL Server};SERVER=fias-clp-dev.prod.factset.com;DATABASE=FIAS_CLP;UID=fiasvcs;PWD=ejL5DdidbL;MultiSubnetFailover=Yes",
+    "BACKUP_DATABASE_URL": "DRIVER={ODBC Driver 11 for SQL Server};SERVER=fias-clp-dev.prod.factset.com;DATABASE=FIAS_CLP;UID=fiasvcs;PWD=ejL5DdidbL;MultiSubnetFailover=Yes",
+    "ECSVENDOR_PRIMARY_DATABASE_URL": "DRIVER={ODBC Driver 11 for SQL Server};SERVER=ecsvendorbck-sql-vip.prod.factset.com;DATABASE=FIA_VENDOR_PROD;UID=dbreader;PWD=readonly;MultiSubnetFailover=Yes"
+  }
+}
